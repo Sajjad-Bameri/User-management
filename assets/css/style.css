@@ -1,0 +1,758 @@
+:root {
+  --bg-body: #3b3b3b;
+  --nav-color: #ffffff; /* The default color of the main navmenu links */
+  --nav-hover-color: rgb(
+    104,
+    104,
+    104
+  ); /* Applied to main navmenu links when they are hovered over or active */
+  --nav-hover-btn: rgb(0, 140, 255);
+  --nav-mobile-background-color: #eaeaea; /* Used as the background color for mobile navigation menu */
+  --nav-dropdown-background-color: #ffffff; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
+  --nav-dropdown-color: #393939; /* Used for navigation links of the dropdown items in the navigation menu. */
+  --nav-dropdown-hover-color: #000000; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
+}
+.dark-background {
+  --bg-body: #dbdbdb;
+  --nav-color: #00c8ff; /* The default color of the main navmenu links */
+  --nav-hover-color: rgb(
+    255,
+    255,
+    255
+  ); /* Applied to main navmenu links when they are hovered over or active */
+  --nav-hover-btn: rgb(0, 140, 255);
+  --nav-color-blue: white;
+}
+
+/* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
+/* 
+.light-background {
+  --background-color: #191919;
+  --surface-color: #3b3b3b;
+} */
+
+.bg-list {
+ background-color: var(--bg-body);
+  color: var(--nav-color);
+}
+.bg-btn {
+  background-color: var(--nav-hover-color);
+  color: var(--nav-color);
+}
+.bg-btn:hover {
+  background-color: var(--nav-hover-btn);
+  color: var(--nav-color-blue);
+}
+
+.bg-white {
+  /* background-color: #ebf6ff; */
+  background-color: var(--bg-body);
+}
+.bg-menu {
+  background-color: var(--bg-body);
+  color: var(--nav-color);
+}
+.loder_log {
+  width: 100%;
+  height: 100vh;
+  background-color: var(--bg-body);
+  z-index: 1001;
+  position: fixed;
+  display: grid;
+  z-index: 1005;
+  align-items: center;
+}
+
+ul li {
+  font-family: tahoma;
+}
+#mobile-demo::-webkit-scrollbar {
+  height: 0px;
+}
+
+.responsive-img {
+  max-width: 70px !important;
+  height: auto !important;
+  display: block;
+}
+
+/* موبایل (عمودی) */
+@media (max-width: 576px) {
+  .responsive-img {
+    width: 50px;
+  }
+}
+
+/* تبلت (عمودی) */
+@media (max-width: 768px) {
+  .responsive-img {
+    width: 50px;
+  }
+}
+
+.cricle {
+  width: 30px;
+  height: 30px;
+  background-color: #0096ff;
+  border-radius: 100px;
+  animation: cc 800ms infinite;
+}
+
+@keyframes cc {
+  0% {
+    width: 20px;
+    height: 20px;
+  }
+  50% {
+    width: 40px;
+    height: 40px;
+  }
+  100% {
+    width: 20px;
+    height: 20px;
+  }
+}
+.dely {
+  width: 30px;
+  height: 30px;
+  background-color: #0096ff;
+  border-radius: 100px;
+  animation: ac 800ms infinite;
+}
+@keyframes ac {
+  0% {
+    width: 40px;
+    height: 40px;
+  }
+  50% {
+    width: 20px;
+    height: 20px;
+  }
+  100% {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+#charachter {
+  animation: dd 4s infinite;
+}
+@keyframes dd {
+  0% {
+    transform: translateX(-50px);
+  }
+  50% {
+    transform: translateX(-90px);
+  }
+  100% {
+    transform: translateX(-50px);
+  }
+}
+#charachter2 {
+  animation: ad 3s infinite;
+}
+@keyframes ad {
+  0% {
+    transform: translate(90px, -220px);
+  }
+  50% {
+    transform: translate(60px, -220px);
+  }
+  100% {
+    transform: translate(90px, -220px);
+  }
+}
+.center {
+  display: flex;
+  width: 140px;
+  height: 100px;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.mix {
+  max-width: 250px;
+}
+.logimg {
+  max-width: 360px;
+}
+.miz {
+  width: 60px;
+  padding: 10px;
+  margin: 10pz;
+}
+.w-100 {
+  width:200px;
+}
+.w-full {
+  border-radius: 7px;
+  width: 300px;
+  height: 40px;
+  margin: 10px;
+}
+.bord-blue {
+  filter: drop-shadow(0px 0px 5px #0095ff53);
+}
+.flex-cc {
+  display: flex;
+  justify-content:space-around;
+  /* justify-items:s; */
+  align-items: center;
+}
+.flex-c {
+  display: grid;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}
+.flex-a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.upp {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--nav-hover-color);
+  color: var(--nav-color);
+}
+.up {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.uup {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+/* body{
+   
+   background-color: rgba(167, 223, 255, 0.767);
+}   */
+.users-list-item .users-list-aroww {
+  transition: all 200ms ease;
+}
+.users-list-item.active .users-list-aroww {
+  transform: rotate(180deg);
+}
+.users-list-item.active,
+.users-list-item.active .collapsible-header {
+  background-color: rgba(0, 162, 255, 0.404);
+}
+.collapsible-header {
+  background-color: rgba(255, 255, 255, 0.404);
+}
+table.highlight > tbody > tr:hover {
+  background-color: #a5d6a7;
+}
+.container {
+  width: 100% !important ;
+}
+.add-user-back {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.658);
+  left: 0;
+  top: 0;
+  z-index: 999;
+}
+
+/* .back{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+} */
+
+.add-user {
+  position: fixed;
+  display: grid;
+  height: 0vh;
+  opacity: 0;
+  bottom: 0;
+  z-index: 1001;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  transition: all ease 200ms;
+  /* background-color: red; */
+}
+
+.add-user.show {
+  height: 80vh;
+  opacity: 1;
+}
+.menu {
+  position: fixed;
+  z-index: 1;
+  width: 0%;
+  height: 100vh;
+  right: 0;
+  /* background-color: #ebf6ff; */
+  overflow: hidden;
+  transition: all 800ms ease;
+}
+.menu.sajad {
+  width: auto;
+  height: 100dvh;
+}
+.sort-list {
+  display: grid;
+  align-content: space-between;
+  justify-items: center;
+}
+
+.dis-none {
+  display: none;
+}
+.user-list-section {
+  height: calc(100vh-250px);
+  overflow: auto;
+}
+
+/* .............. */
+#add_user_button {
+  display: flex;
+  align-items: center;
+}
+.dis {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 20px;
+}
+
+.grid-a-j {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+}
+.blur-layer {
+  /* background-color: rgba(255, 255, 255, 0.575); */
+  background: linear-gradient(
+    rgba(255, 255, 255, 0.381),
+    rgba(110, 158, 255, 0.348)
+  );
+  /* رنگ سفید نیمه شفاف */
+  backdrop-filter: blur(5px);
+  /* اعمال بلور */
+  -webkit-backdrop-filter: blur(10px);
+  /* نسخهٔ وب‌کیت برای سازگاری */
+  border: 1px solid white;
+  border-radius: 10px;
+  /* color: rgb(255, 0, 0); */
+}
+
+.box {
+  width: 300px;
+  height: 180px;
+  /* background-color: red; */
+  z-index: 1001;
+  margin: 10px;
+  border-radius: 10px;
+  display: grid;
+  flex-wrap: wrap;
+}
+@media (max-width: 300px) {
+  .box {
+    width: 100%;
+  }
+}
+
+/* تبلت (عمودی) */
+@media (max-width: 520px) {
+  .box {
+    width: 100%;
+  }
+}
+.flex-wrap {
+  margin: 0 auto;
+  left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  height: auto;
+  /* background-color: blue; */
+}
+.img-cricle {
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  /* background-color: white; */
+}
+
+/* From Uiverse.io by DaniloMGutavo */
+.checkbox-container {
+  display: inline-block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 16px;
+  user-select: none;
+}
+
+.custom-checkbox {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+}
+
+.custom-checkbox:checked ~ .checkmark {
+  background-color: #2196f3;
+  box-shadow: 0 3px 7px rgba(33, 150, 243, 0.3);
+}
+
+.custom-checkbox:checked ~ .checkmark:after {
+  display: block;
+}
+
+@keyframes checkAnim {
+  0% {
+    height: 0;
+  }
+
+  100% {
+    height: 10px;
+  }
+}
+
+.custom-checkbox:checked ~ .checkmark:after {
+  animation: checkAnim 0.2s forwards;
+}
+
+/* From Uiverse.io by JulanDeAlb */
+.hamburger {
+  cursor: pointer;
+}
+
+.hamburger input {
+  display: none;
+}
+
+.hamburger svg {
+  /* The size of the SVG defines the overall size */
+  height: 3em;
+  /* Define the transition for transforming the SVG */
+  transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.line {
+  fill: none;
+  stroke: white;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 3;
+  /* Define the transition for transforming the Stroke */
+  transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+    stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.line-top-bottom {
+  stroke-dasharray: 12 63;
+}
+
+.hamburger input:checked + svg {
+  transform: rotate(-45deg);
+}
+
+.hamburger input:checked + svg .line-top-bottom {
+  stroke-dasharray: 20 300;
+  stroke-dashoffset: -32.42;
+}
+
+/* From Uiverse.io by alexruix */
+.form-box {
+  max-width: 300px;
+  background: #f1f7fe;
+  overflow: hidden;
+  border-radius: 16px;
+  color: #010101;
+}
+
+.form {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 32px 24px 24px;
+  gap: 16px;
+  text-align: center;
+}
+
+/*Form text*/
+.title {
+  font-weight: bold;
+  font-size: 1.6rem;
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: #666;
+}
+
+/*Inputs box*/
+.form-container {
+  overflow: hidden;
+  border-radius: 8px;
+  background-color: #fff;
+  margin: 1rem 0 0.5rem;
+  width: 100%;
+}
+
+.input {
+  background: none;
+  border: 0;
+  outline: 0;
+  height: 40px;
+  width: 100%;
+  border-bottom: 1px solid #eee;
+  font-size: 0.9rem;
+  padding: 8px 15px;
+}
+
+.form-section {
+  padding: 16px;
+  font-size: 0.85rem;
+  background-color: #e0ecfb;
+  box-shadow: rgb(0 0 0 / 8%) 0 -1px;
+}
+
+
+
+*{
+  padding: 0;
+  margin: 0;
+}
+.form-section a {
+  font-weight: bold;
+  color: #0066ff;
+  transition: color 0.3s ease;
+}
+
+.form-section a:hover {
+  color: #005ce6;
+  text-decoration: underline;
+}
+
+/*Button*/
+.form button {
+  background-color: #0066ff;
+  color: #fff;
+  border: 0;
+  border-radius: 24px;
+  padding: 10px 16px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form button:hover {
+  background-color: #005ce6;
+}
+
+/* From Uiverse.io by Yaya12085 */
+button {
+  max-width: 320px;
+  display: flex;
+  padding: 0.5rem 1.4rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  vertical-align: middle;
+  align-items: center;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  gap: 0.75rem;
+  color: rgb(65, 63, 63);
+  background-color: #fff;
+  cursor: pointer;
+  transition: all 0.6s ease;
+}
+
+.button svg {
+  height: 24px;
+}
+
+button:hover {
+  transform: scale(1.02);
+}
+
+
+/* استایل دکمه‌های شبکه‌های اجتماعی */
+.social-buttons {
+  display: flex;
+  gap: 10px;
+  margin: 12px 0;
+  justify-content: center;
+}
+
+.social-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 18px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.social-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.social-btn.linkedin {
+  background: #0077b5;
+}
+
+.social-btn.telegram {
+  background: #0088cc;
+}
+
+.social-btn.twitter {
+  background: #1da1f2;
+}
+
+.social-btn.instagram {
+  background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+}
+
+/* استایل‌های قبلی دکمه دنبال کردن و پاپ‌آپ */
+.follow-btn {
+  padding: 8px 16px;
+  background: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%);
+  color: #0366d6;
+  border: 1px solid #d1d5da;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  margin: 10px 0;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.follow-btn:hover {
+  background: linear-gradient(135deg, #ebf0f5 0%, #d9e0e6 100%);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+}
+
+.follow-btn.followed {
+  background: linear-gradient(135deg, #28a745 0%, #22863a 100%);
+  color: white;
+  border-color: #28a745;
+}
+
+.follow-popup {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  background: #2c3e50;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  display: none;
+  align-items: center;
+  gap: 12px;
+  opacity: 0;
+  transition: all 0.3s ease-out;
+  z-index: 1000;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.search{
+  background-color: rgb(226, 226, 226);
+  border-radius: 8px;
+}
+.search:focus{
+  border: rgb(22, 8, 129) solid 1px;
+}
+
+
+
+
+.telegram-circle {
+  width: 30px;
+  height: 30px;
+  background: linear-gradient(135deg, #0088cc 0%, #34b7f1 100%);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 
+      inset 3px 3px 10px rgba(0, 0, 0, 0.2),
+      inset -3px -3px 10px rgba(255, 255, 255, 0.4),
+      0 10px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.telegram-circle::before {
+  content: '';
+  position: absolute;
+  width:25px;
+  height:25px;
+  border-radius: 50%;
+  background: transparent;
+  box-shadow: inset -5px -5px 10px rgba(255, 255, 255, 0.3);
+}
+
+.telegram-icon {
+  color: white;
+  font-size: 70px;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.telegram-circle:hover {
+  transform: scale(0.90);
+  box-shadow: 
+      inset 3px 3px 10px rgba(0, 0, 0, 0.2),
+      inset -3px -3px 10px rgba(255, 255, 255, 0.4),
+      0 15px 30px rgba(0, 0, 0, 0.2);
+}

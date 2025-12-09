@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">  
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/materialize/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/util.css">
+    <link rel="stylesheet" href="assets/css/loop.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <title>Document</title>
+</head>
+<body x-data="usersData" class="back1 bg-white ">
+
+  <header class=" align_center">
+ 
+    <div class="menu z-index upp  bord-blue sort-list" x-bind:class="{'sajad':addshowmodal}">
+
+    
+      <div class="sort-list">
+      <img src="/assets/imags/Layer-1.png" class="max-w-m mar p-all" alt="logo">
+  
+      <a href="/index.html" class="waves-effect Waves-light w-100 align_right p-all"> خانه <span class=" ">🏠</span>
+     
+      </a>
+     
+      <a href="#" class="waves-effect Waves-light w-100 align_right p-all">اساتید 👨‍🏫</a>
+      <a href="users.html" class="waves-effect Waves-light  w-100  align_right p-all bg-menu">فهرست کاربران 📄
+        <img src="/assets/imags/1P.png" class=" m-l-5" width="10px" alt="arrow"> </a>
+      <a href="users.html" class="waves-effect Waves-light  w-100  align_right p-all">درباره ما 📌</a>
+      <p  id="night" class="  align_right shab p-all w-100 "> <span class="  p-all"> darkMode</span>🌑</p>
+      <p  id="light" class=" w-100  align_right day p-all dis-none"><span class="  p-all">  lighMode</span>🌞</p>
+    </div>
+    <div class="grid-a-j">
+    <a href="#" class="waves-effect Waves-light flex-cc z-depth-0 darken-4 p-all w-100" x-bind:class="{'show':adduser}" x-show="addshowmodal" x-transition x-on:click="addshowmodal=false,login(),adduser=true">
+      <div class="telegram-circle">
+        <i class="bi bi-telegram white-text"></i>
+     
+    </div>
+    <div class="telegram-circle">
+      <i class="bi bi-linkedin white-text"></i>
+   
+  </div>
+  <div class="telegram-circle">
+    <i class="bi bi-twitter white-text"></i>
+ 
+</div>
+      
+      
+      </a>
+    
+      <a href="#" class="waves-effect Waves-light btn bord-blue blue z-depth-0 darken-4  w-100" x-bind:class="{'show':adduser}" x-show="addshowmodal" x-transition x-on:click="addshowmodal=false,login(),adduser=true">عضویت | ورود</a>
+    </div>
+
+
+  </div>
+  <nav class=" z-index z-depth-0 upp bord-blue">
+  
+    <div class="flex-a ">
+ 
+      <a href="#" class="flex-a "  x-on:click="adduser=true ; login() ; useridToedit = null ; handleResetForm()" >
+        <img src="/assets/imags/download (1).png"class="miz" alt="account"><span class=" upp hide-on-small-only"></span></a>
+    
+        
+    
+ 
+      
+    </div>
+  
+  
+        <div class="flex-a ">
+          <form class="nav-wrapper p-all">
+            <div class="input-field search  over-hiden"  x-init="$watch('searchChar',(value)=>handleSearch(value))">
+            
+              <input  x-model="searchChar" id="search" class="rounded_pill align_right" placeholder="جستجو"  type="search">
+             
+             
+              <!-- <i class="material-icons">close</i> -->
+            </div>
+          </form>
+          <img src="/assets/imags/Layer-1.png" class="max-w-m " alt="logo">
+          <svg  xmlns="http://www.w3.org/2000/svg"  x-on:click="addshowmodal=true" x-transition ئه width="25" height="25" fill="currentColor" class="openlist bi bi-list blue-text mar" id="listopen" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+          </svg>
+        <span class="closelist p-all dis-none" id="listclose" x-on:click="addshowmodal=false" x-transition>❌</span>
+            </div>
+    </nav>
+
+</header>
+
+
+
+  <div class="backend loder_log" x-show="isload">
+    <div class="grid-a-j">
+    <img src="/assets/imags/Layer-1.png" class="max-w" alt="logo">
+      <div class="center">
+        <div class="cricle"></div>
+        <div class=" dely"></div>
+        <div class="cricle"></div>
+      </div>
+    </div>
+  </div>
+  <div class="loder_log " x-show="isloadd">
+    <div class="grid-a-j">
+    <img src="/assets/imags/Layer-1.png" class="max-w" alt="logo">
+      <div class="center">
+        <div class="cricle"></div>
+        <div class=" dely"></div>
+        <div class="cricle"></div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="add-user-back z-index blur-layer" x-show="adduser" x-transition x-on:click="adduser=false"></div> 
+  <!-- end_header -->
+
+ <!-- log -->
+ <section x-show="log" class=" container z-index " >
+
+  <div class="add-user  row"x-bind:class="{'show':adduser}">
+
+
+
+    <div class="row rounded_pill align_center col l6 m6 p-t-10 p-r-40 p-l-40 p-b-10 ">
+
+    
+      <!-- From Uiverse.io by alexruix --> 
+<div class="form-box bg-menu align_center">
+ 
+<form class="form">
+  <h5> <span x-text = "useridToedit ?  'ویرایش کاربر' : 'ورود | ثبت نام'"></span></h5>
+   
+    <!-- <span class="subtitle">Create a free account with your email.</span> -->
+   
+    
+    <div class="form-container">
+      <input required id="username" type="text" class="input" placeholder="Full Name" x-model=" newaddusers.username">
+      <input required id="password" type="email" class="input" placeholder="Email" x-model=" newaddusers.email">
+      <input required id="name" type="password" class="input" placeholder="Password" x-model=" newaddusers.pass">
+    </div>
+    <button class=" Waves-light flex-a " id="loginBtn"
+     x-bind:class="{'pulse': isloadd , 'orang':useridToedit}"
+    x-bind:disabled="isloadd"
+      x-on:click="useridToedit ? handleupdareusers() : handleSubmit()">ثبت</button>
+</form>
+<div class="form-section ">
+  <p>وارد شدن با حساب گوگل
+
+
+  </p>
+  <img src="/assets/imags/icons8-google.svg" class=" rounded_pill white m12" alt="" width="25px" height="25px">
+</div>
+</div>
+   
+     
+    
+    
+
+  </div>
+</section>
+<!-- end-log -->
+<div class="add-user-back blur-layer" x-show="addshowmodal" x-transition ></div>
+
+
+
+
+  <div class="backend" x-show="isload">
+    <div class="ff">
+    <img src="/assets/imags/Layer-1.png" class="max-w" alt="">
+      <div class="center">
+        <div class="cricle"></div>
+        <div class=" dely"></div>
+        <div class="cricle"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="add-user-back  blur-layer"x-show="adduser" x-transition x-on:click="adduser=false"></div> 
+    
+
+  <p href="" class=" gutter_left color font1">Home>user manager</p> 
+
+
+  
+  <!-- <section id="top-actions-section"class="row gutter_b container add_user_button">
+    <div >
+      <div class="input-field  p-all gutter_b"
+      x-init="$watch('searchChar',(value)=>handleSearch(value))">
+        <input maxlength="10" id="search" type="text" class="validate" 
+      x-model="searchChar">
+             <label for="disabled">
+               <i class="material-icons make_relative top-7">search</i> 
+                           search</label>
+                             </div> 
+                    </div> 
+                         </section>
+  <div class="progress"x-show="isload">
+    <div class="indeterminate"></div>
+</div>  -->
+  
+<section class="user-list-section"x-init="getUsers">
+  <ul class="collapsible hide-on-med-and-up">
+    <template x-for="user in pageUsers">
+    <li class="users-list-item">
+      <div class="collapsible-header">
+          <i class="material-icons blue-text  users-list-aroww">
+                      
+            arrow_drop_down_circle
+           
+        </i>
+
+        
+        <span x-text="user.username"></span>
+   
+      </div>
+      <div class="collapsible-body">
+        <div class=" p-all">
+          <span class="font-b font2">
+UserName:
+          </span>
+          <span x-text="user.username">
+                      </span>
+        </div>
+        
+        <div class=" p-all">
+          <span class="font-b font2">
+Email
+          </span>
+          <span x-text="user.email">
+            
+          </span>
+        </div>
+        <div class=" p-all">
+          <span class="font-b font2">
+Address:
+          </span>
+          <span x-text="(user.address?.city||'')+'-'+(user.address?.street||'')">
+          
+          </span>
+        </div>
+        <div class=" p-all">
+
+          <a href="#delet"> <i class="material-icons red-text gutter_top"x-on:click="handleDeleteUsers(user.id)"> delete_forever 
+          </i></a>
+          <a href="#Edit"><i class="material-icons orange-text darken-2 " x-on:onclick=" handleupdareusers(user)">edit
+          </i></a>
+        </div>
+      </div>
+        </li></template>
+       </ul>
+        <div class=" hide-on-med-and-down show-on-medium-and-up">
+  <table class=" bg-menu width_100  gutter_a centered">
+  <thead>
+<tr>
+  <th>#</th>
+  <th>Name</th>
+  <th>UserName</th>
+  <th>Email</th>
+  <th>Address</th>
+  <th>Action</th>
+</tr>
+  </thead>
+  <tbody class="desktop_table_body">
+   <template x-for="user in pageUsers">
+ 
+<tr> 
+  <td x-text="user.id">
+      
+  </td>
+  <td x-text="user.name"></td>
+  <td x-text="user.username"></td>
+  <td x-text="user.email"></td>
+  <td x-text="(user.address?.city||'')+'-'+(user.address?.street||'')"></td>
+  <td>
+    <a href="#delet"> <i class="material-icons red-text gutter_top "x-on:click="handleDeleteUsers(user.id)"> delete_forever 
+     </i></a>
+     <a href="#Edit"><i class="material-icons orange-text darken-2 " x-bind:class="{'show':adduser}" x-on:onclick=" handleupdareusers(user) , adduser = true">edit
+     </i>
+   </td>
+</tr>
+</template>
+  </tbody>
+  
+</table>
+  </div>
+<div class="bg-menu bord-blue pagination-container container z-depth-4 p-l-9 p-r-9 p-b-10 p-t-10 uup rounded-top ">
+  <div class="pagination_item_counts p-l-10 flex-a">
+    showing
+    <span class="  m-r-5 m-l-5 max-w pos-relative  top-4"
+    x-init="$watch('itemsCount',(value)=>handelChengItemCount(value))">
+      <input type="number"class=" no-border center-align gutter_bottom_none"x-model="itemsCount"
+      x-on:change="pagination()">
+    </span>
+    of
+    <span class=" m-r-5 m-l-5"x-text="users.length">
+
+     </span>
+      </div>
+      <strong x-text="currentPage"class=""></strong>
+      <div class="pagination-buttons flex-a">
+<i class="material-icons  m-r-5 m-l-5  p-r-5  p-l-5 p-t-1 p-b-3 waves-effect Waves-light rounded_pill" x-on:click="backpage()">keyboard_arrow_left</i>
+<i class="material-icons  m-r-5 m-l-5  p-r-5  p-l-5 p-t-1 p-b-3 waves-effect Waves-light rounded_pill" x-on:click="nextpage()">keyboard_arrow_right</i>
+      </div>    
+</div>
+ </section>
+<!-- <div class="add-user-back "x-show="addshowmodal" x-transition ></div>  -->
+
+
+</body> 
+<script src="/assets/js/getusers.js"></script>
+<script src="assets/js/axios.js"></script>
+<script src="assets/js/mainC/userscontrols.js"></script>
+<script defer src="assets/js/alpine.js"></script>
+<script src="assets/materialize/js/materialize.min.js" ></script>
+<script src="assets/js/main.js" ></script>
+<script src="assets/js/users.js" ></script>
+
+</html>
